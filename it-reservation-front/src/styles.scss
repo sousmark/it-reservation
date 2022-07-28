@@ -1,0 +1,290 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700");
+
+@font-face {
+  font-family: 'RenaultGroup-Regular';
+  src: url("./assets/fonts/RenaultGroup-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+// Global vendors
+@import "~bootstrap/dist/css/bootstrap.css";
+// => Material
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+@import "~highlight.js/styles/googlecode.css";
+@import "~perfect-scrollbar/css/perfect-scrollbar.css";
+
+// Global fonts
+@import "~socicon/css/socicon.css";
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import "./assets/plugins/flaticon/flaticon.css";
+@import "./assets/plugins/flaticon2/flaticon.css";
+@import "./assets/plugins/keenthemes-icons/font/ki.css";
+
+// Metronic styles (replace these path when using RTL css below)
+@import "./assets/sass/style.angular.scss";
+
+// For RTL, check this documentation https://keenthemes.com/metronic/?page=docs&section=angular-rtl
+// @import "./assets/sass/style.angular.rtl.css";
+
+// Default Layout themes
+@import "./assets/sass/themes/layout/header/base/light.scss";
+@import "./assets/sass/themes/layout/header/menu/light.scss";
+@import "./assets/sass/themes/layout/brand/dark.scss";
+@import "./assets/sass/themes/layout/aside/dark.scss";
+
+// Header themes
+// .header-base-light {
+//     @import "./assets/sass/themes/layout/header/base/light.scss";
+// }
+
+// .header-base-dark {
+//     @import "./assets/sass/themes/layout/header/base/dark.scss";
+// }
+
+// Header Menu themes
+// .header-menu-light {
+//     @import "./assets/sass/themes/layout/header/menu/light.scss";
+// }
+// .header-menu-dark {
+//     @import "./assets/sass/themes/layout/header/menu/dark.scss";
+// }
+
+// Brand themes
+.brand-dark {
+  @import "./assets/sass/themes/layout/brand/dark.scss";
+}
+
+.brand-light {
+  @import "./assets/sass/themes/layout/brand/light.scss";
+}
+
+// Calendar style
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+
+// Aside themes
+// .aside-dark {
+//   @import "./assets/sass/themes/layout/aside/dark.scss";
+// }
+
+// .aside-light {
+//   @import "./assets/sass/themes/layout/aside/light.scss";
+// }
+
+// hide bootstrap dropdown arrow globally
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.angular-bootstrap-table {
+  overflow-x: auto;
+}
+.angular-bootstrap-table {
+  th {
+    outline: none;
+
+    &.sortable {
+      .svg-icon-sort {
+        opacity: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        .svg-icon-sort {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .table.table-head-custom thead th.sortable-active {
+    color: $primary !important;
+  }
+}
+
+.cursor-default {
+  cursor: default !important;
+}
+
+.progress-modal {
+  height: 3px;
+  width: 100%;
+}
+
+.btn-primary {
+  color: #ffffff !important;
+  background-color: $or-primary !important;
+  border-color: $or-secondary !important;
+}
+
+.btn-primary:hover {
+  color: $or-primary !important;
+  background-color: $or-secondary !important;
+  border-color: $or-primary !important;
+}
+
+.btn-secondary {
+  color: $or-primary !important;
+  background-color: $or-secondary !important;
+  border-color: $or-primary !important;
+}
+
+.btn-secondary:hover {
+  color: $or-secondary !important;
+  background-color: $or-primary !important;
+  border-color: $or-secondary !important;
+}
+
+.btn-success {
+  color: $or-secondary !important;
+  background-color: $or-success !important;
+  border-color: $or-secondary !important;
+}
+
+.btn-success:hover {
+  color: $or-success !important;
+  background-color: $or-secondary !important;
+  border-color: $or-success !important;
+}
+
+.btn-danger {
+  color: $or-secondary !important;
+  background-color: $or-danger !important;
+  border-color: $or-secondary !important;
+}
+
+.btn-danger:hover {
+  color: $or-danger !important;
+  background-color: $or-secondary !important;
+  border-color: $or-danger !important;
+}
+
+.btn-info {
+  color: $or-secondary !important;
+  background-color: $or-info !important;
+  border-color: $or-secondary !important;
+}
+
+.btn-info:hover {
+  color: $or-info !important;
+  background-color: $or-secondary !important;
+  border-color: $or-info !important;
+}
+
+.btn-warning {
+  color: $or-secondary !important;
+  background-color: $or-warning !important;
+  border-color: $or-secondary !important;
+}
+
+.btn-warning:hover {
+  color: $or-warning !important;
+  background-color: $or-secondary !important;
+  border-color: $or-warning !important;
+}
+
+.bg-light-success {
+  background-color: $or-success !important;
+}
+
+.bg-light-danger {
+  background-color: $or-danger !important;
+}
+
+.bg-light-info {
+  background-color: $or-info !important;
+}
+
+.bg-light-warning {
+  background-color: $or-warning !important;
+}
+
+.bg-light-primary {
+  background-color: $or-primary !important;
+}
+
+.svg-icon-success {
+  color: $or-success !important;
+}
+
+.text-success {
+  color: $or-secondary !important;
+}
+
+.text-success:hover {
+  color: $or-secondary !important;
+}
+
+.text-danger {
+  color: $or-secondary !important;
+}
+
+.text-danger:hover {
+  color: $or-secondary !important;
+}
+
+.text-info {
+  color: $or-secondary !important;
+}
+
+.text-info:hover {
+  color: $or-secondary !important;
+}
+
+.text-warning {
+  color: $or-secondary !important;
+}
+
+.text-warning:hover {
+  color: $or-secondary !important;
+}
+
+.text-primary {
+  color: $or-secondary !important;
+}
+
+.text-primary:hover {
+  color: $or-secondary !important;
+}
+
+.spinner-primary {
+  color: $or-secondary !important;
+}
+
+.alert-danger {
+  background: #CB4B32 !important;
+}
+
+.alert-light-danger {
+  background: rgba(203, 75, 50, 0.3);
+}
+
+.notification-success {
+  background-color: $or-success !important;
+  color: $or-secondary !important;
+}
+
+.notification-failure {
+  background-color: $or-danger !important;
+  color: $or-secondary !important;
+}
+
+.notification-info {
+  background-color: $or-info !important;
+  color: $or-secondary !important;
+}
+
+.notification-warning {
+  background-color: $or-warning !important;
+  color: $or-secondary !important;
+}
+
+.notification-standard {
+  background-color: $or-primary !important;
+  color: $or-secondary !important;
+  // font-weight: bold;
+  // border: 2px solid $or-secondary;
+}

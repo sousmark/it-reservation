@@ -1,0 +1,84 @@
+<div class="login-form login-signin"
+  style="padding: 3%; border: 2px solid #978B7F; border-radius: 10px !important; box-shadow: 3px 3px 2px rgb(0 0 0 / 30%); background-color: #ffffff !important;">
+  <form class="form" [formGroup]="loginForm" novalidate="novalidate" id="kt_login_signin_form" (ngSubmit)="submit()">
+    <div class="pb-13 pt-lg-0 pt-5 text-center">
+      <img src="../../../../assets/media/logos/oyak-renault-siyah-2.png" style="width: 100%" />
+    </div>
+    <div class="pb-13 pt-lg-0 pt-5 text-center visible-xs">
+      <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">
+        {{ applicationName }}
+      </h3>
+    </div>
+
+    <div *ngIf="authenticationMethod != 'IDP'">
+      <div class="form-group" *ngIf="authenticationMethod == 'LDAP'">
+        <label class="font-size-h6 font-weight-bolder text-dark">
+          {{ 'AUTH.IPN' | translate }}
+        </label>
+        <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" type="text" name="ipn"
+          formControlName="ipn" autocomplete="off" />
+      </div>
+
+      <div class="form-group" *ngIf="authenticationMethod == 'CUSTOM'">
+        <label class="font-size-h6 font-weight-bolder text-dark">
+          {{ 'AUTH.INPUT.USERNAME' | translate }}
+        </label>
+        <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" type="text" name="username"
+          formControlName="username" autocomplete="off" />
+      </div>
+
+      <div class="form-group" *ngIf="authenticationMethod == 'OTP' && !showOtpPasswordSection">
+        <label class="font-size-h6 font-weight-bolder text-dark">
+          {{ 'AUTH.INPUT.IDENTIFIER' | translate }}
+        </label>
+        <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" type="text" name="identifier"
+          formControlName="username" autocomplete="off"/>
+      </div>
+
+      <div class="form-group" *ngIf="authenticationMethod != 'OTP'">
+        <div class="d-flex justify-content-between mt-n5">
+          <label class="font-size-h6 font-weight-bolder text-dark pt-5">
+            {{ 'AUTH.INPUT.PASSWORD' | translate }}
+          </label>
+        </div>
+
+        <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" type="password" name="password"
+          autocomplete="off" formControlName="password" />
+      </div>
+
+      <div class="form-group" *ngIf="authenticationMethod == 'OTP' && !showOtpPasswordSection">
+        <div class="d-flex justify-content-between mt-n5">
+          <label class="font-size-h6 font-weight-bolder text-dark pt-5">
+            {{ 'AUTH.INPUT.PHONE_NUMBER' | translate }}
+          </label>
+        </div>
+
+        <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" type="number" name="phoneNumber" 
+          autocomplete="off" formControlName="phoneNumber" />
+      </div>
+      
+
+      <div class="form-group" *ngIf="authenticationMethod == 'OTP' && showOtpPasswordSection">
+        <div class="d-flex justify-content-between mt-n5">
+          <label class="font-size-h6 font-weight-bolder text-dark pt-5">
+            {{ 'AUTH.INPUT.PASSWORD' | translate }}
+          </label>
+        </div>
+
+        <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" type="password" name="otpPassword"
+          autocomplete="off" formControlName="otpPassword" />
+      </div>
+    </div>
+
+    <div class="pb-lg-0 pb-5">
+      <button type="submit" id="kt_login_signin_submit"
+        class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3 btn-block">
+        {{ authenticationMethod != 'IDP' ? ('AUTH.LOGIN.BUTTON' | translate) : ('AUTH.LOGIN.LOGIN_WITH_IDP' | translate) }}
+        <ng-container *ngIf="isLoading$ | async">
+          <span class="spinner spinner-primary ml-5"></span>
+        </ng-container>
+      </button>
+
+    </div>
+  </form>
+</div>

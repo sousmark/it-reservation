@@ -1,0 +1,22 @@
+@import "../../../assets/sass/pages/login/login-1.scss";
+
+:host {
+  height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
+
+// @media only screen and (min-width: 600px) {
+//   .hidden-xs {
+//     display: block !important;
+//   }
+// }
+
+.login-bg {
+  background-color: $or-primary;
+}

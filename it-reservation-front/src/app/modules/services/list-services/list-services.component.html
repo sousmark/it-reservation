@@ -1,0 +1,24 @@
+<div class="btn btn-primary new"
+     (click)="newService()">NEW</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Service</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Employee</th>
+    </tr>
+  </thead>
+  <ng-container *ngIf="services$ | async as services">
+    <tbody>
+      <tr *ngFor="let service of services">
+        <th scope="row">{{ service.id }}</th>
+        <td>{{ service.name }}</td>
+        <td>{{ service.title }}</td>
+        <td>{{ service.description }}</td>
+        <td>{{ service.id_employee }}</td>
+      </tr>
+    </tbody>
+  </ng-container>
+</table>
